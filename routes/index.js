@@ -84,49 +84,4 @@ router.delete("/user", async(req, res) =>{
   res.status(300).json(r);
 });
 
-
-
-////
-// PATCH CLIENTE
-
-/*
-router.patch("/user", (req, res) => {
-  var params = req.body;
-  var id = req.query.id;
-
-  //var params = req.body;
-  params["updateDate"] = new Date();
-  //Collection of data
-  var keys = Object.keys(params);
-  var updatekeys = ["name","lastname", "adress", "age", "nickname", "password", "updateDate"];
-  var newkeys = [];
-  var values = [];
-  //seguridad
-  for (var i  = 0; i < updatekeys.length; i++) {
-    var index = keys.indexOf(updatekeys[i]);
-    if (index != -1) {
-        newkeys.push(keys[index]);
-        values.push(params[keys[index]]);
-    }
-  }
-  var objupdate = {}
-  for (var i  = 0; i < newkeys.length; i++) {
-      objupdate[newkeys[i]] = values[i];
-  }
-  console.log(objupdate);
-  USER.findOneAndUpdate({_id: id}, objupdate ,(err, docs) => {
-    if (err) {
-      res.status(500).json({
-          msn: "Existe un error en la base de datos"
-      });
-      return;
-    }
-    var id = docs._id
-
-    res.status(200).json({
-      msn: "cliente actualizado con el id: " + id
-    })
-  });
-});
-*/
 module.exports = router;
